@@ -1,0 +1,9 @@
+*.o
+*.d
+*.a
+*.map
+*.elf
+*.bin
+*.dis
+*.tar
+ofiles
