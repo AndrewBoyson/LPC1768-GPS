@@ -8,9 +8,9 @@
 #include "net/net.h"
 #include "settings/settings.h"
 #include "web/web.h"
-#include "net/udp/ntp/ntpserver.h"
 #include "gps/gps.h"
 #include "lpc1768/led.h"
+#include "net-this/net-this-leds.h"
 
 int main()
 {
@@ -22,9 +22,7 @@ int main()
          ClkInit();
          LogInit(ClkNowTmUtc, 115200);
          GpsInit();
-         NetInit();
-    NtpServerName   = "GPS";
-    NtpServerEnable = true;
+         NetInit("GPS", NetThisLinkLed, NetThisSpeedLed, true);
          WebInit();
       
     while (1)

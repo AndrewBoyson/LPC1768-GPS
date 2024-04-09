@@ -7,7 +7,7 @@ void WebHomeQuery(char* pQuery)
         char* pName;
         char* pValue;
         pQuery = HttpQuerySplit(pQuery, &pName, &pValue);
-        int value = HttpQueryValueAsInt(pValue);
+        //int value = HttpQueryValueAsInt(pValue);
     }
 }
 

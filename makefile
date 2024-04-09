@@ -1,26 +1,22 @@
 #Shared clock files
-CFILES += $(wildcard ../shared/clock/*.c ../shared/clock/*/*.c ../shared/clock/*/*/*.c ../shared/clock/*/*/*/*.c ../shared/clock/*/*/*/*/*.c)
-SFILES += $(wildcard ../shared/clock/*.s ../shared/clock/*/*.s ../shared/clock/*/*/*.s ../shared/clock/*/*/*/*.s ../shared/clock/*/*/*/*/*.s)
+CFILES += $(wildcard ../shared/clock/*.c   ../shared/clock/*/*.c   ../shared/clock/*/*/*.c   ../shared/clock/*/*/*/*.c   ../shared/clock/*/*/*/*/*.c)
+SFILES += $(wildcard ../shared/clock/*.s   ../shared/clock/*/*.s   ../shared/clock/*/*/*.s   ../shared/clock/*/*/*/*.s   ../shared/clock/*/*/*/*/*.s)
 
 #Shared log files
-CFILES += $(wildcard ../shared/log/*.c ../shared/log/*/*.c ../shared/log/*/*/*.c ../shared/log/*/*/*/*.c ../shared/log/*/*/*/*/*.c)
-SFILES += $(wildcard ../shared/log/*.s ../shared/log/*/*.s ../shared/log/*/*/*.s ../shared/log/*/*/*/*.s ../shared/log/*/*/*/*/*.s)
+CFILES += $(wildcard ../shared/log/*.c     ../shared/log/*/*.c     ../shared/log/*/*/*.c     ../shared/log/*/*/*/*.c     ../shared/log/*/*/*/*/*.c)
+SFILES += $(wildcard ../shared/log/*.s     ../shared/log/*/*.s     ../shared/log/*/*/*.s     ../shared/log/*/*/*/*.s     ../shared/log/*/*/*/*/*.s)
 
 #Shared lpc1768 files
 CFILES += $(wildcard ../shared/lpc1768/*.c ../shared/lpc1768/*/*.c ../shared/lpc1768/*/*/*.c ../shared/lpc1768/*/*/*/*.c ../shared/lpc1768/*/*/*/*/*.c)
 SFILES += $(wildcard ../shared/lpc1768/*.s ../shared/lpc1768/*/*.s ../shared/lpc1768/*/*/*.s ../shared/lpc1768/*/*/*/*.s ../shared/lpc1768/*/*/*/*/*.s)
 
-#Shared crypto files
-CFILES += $(wildcard ../shared/crypto/*.c ../shared/crypto/*/*.c ../shared/crypto/*/*/*.c ../shared/crypto/*/*/*/*.c ../shared/crypto/*/*/*/*/*.c)
-SFILES += $(wildcard ../shared/crypto/*.s ../shared/crypto/*/*.s ../shared/crypto/*/*/*.s ../shared/crypto/*/*/*/*.s ../shared/crypto/*/*/*/*/*.s)
-
 #Shared net files
-CFILES += $(wildcard ../shared/net/*.c ../shared/net/*/*.c ../shared/net/*/*/*.c ../shared/net/*/*/*/*.c ../shared/net/*/*/*/*/*.c)
-SFILES += $(wildcard ../shared/net/*.s ../shared/net/*/*.s ../shared/net/*/*/*.s ../shared/net/*/*/*/*.s ../shared/net/*/*/*/*/*.s)
+CFILES += $(wildcard ../shared/net/*.c     ../shared/net/*/*.c     ../shared/net/*/*/*.c     ../shared/net/*/*/*/*.c     ../shared/net/*/*/*/*/*.c)
+SFILES += $(wildcard ../shared/net/*.s     ../shared/net/*/*.s     ../shared/net/*/*/*.s     ../shared/net/*/*/*/*.s     ../shared/net/*/*/*/*/*.s)
 
 #Shared web files
-CFILES += $(wildcard ../shared/web/*.c ../shared/web/*/*.c ../shared/web/*/*/*.c ../shared/web/*/*/*/*.c ../shared/web/*/*/*/*/*.c)
-SFILES += $(wildcard ../shared/web/*.s ../shared/web/*/*.s ../shared/web/*/*/*.s ../shared/web/*/*/*/*.s ../shared/web/*/*/*/*/*.s)
+CFILES += $(wildcard ../shared/web/*.c     ../shared/web/*/*.c     ../shared/web/*/*/*.c     ../shared/web/*/*/*/*.c     ../shared/web/*/*/*/*/*.c)
+SFILES += $(wildcard ../shared/web/*.s     ../shared/web/*/*.s     ../shared/web/*/*/*.s     ../shared/web/*/*/*/*.s     ../shared/web/*/*/*/*/*.s)
 
 #This files
 CFILES += $(wildcard *.c */*.c */*/*.c)
@@ -31,7 +27,7 @@ OFILES += $(patsubst %.s,%.o,$(SFILES))
 
 PROJECT=gps
 
-LSCRIPT=link.ld
+LSCRIPT=../shared/lpc1768/link.ld
 
 OPTIMIZATION=2
 
@@ -42,8 +38,8 @@ GCFLAGS += -mcpu=cortex-m3
 GCFLAGS += -mthumb
 GCFLAGS += -Wall
 GCFLAGS += -Wno-misleading-indentation
-GCFLAGS += -Wno-unused-function
-GCFLAGS += -Wno-unused-variable
+#GCFLAGS += -Wno-unused-function
+#GCFLAGS += -Wno-unused-variable
 GCFLAGS += -Werror
 GCFLAGS += -I.
 GCFLAGS += -I../shared 
