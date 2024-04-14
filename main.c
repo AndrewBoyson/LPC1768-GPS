@@ -6,13 +6,11 @@
 #include "clock/clk/clk.h"
 #include "log/log.h"
 #include "net/net.h"
+#include "net/udp/ntp/ntpserver.h"
 #include "settings/settings.h"
 #include "web/web.h"
 #include "gps/gps.h"
 #include "lpc1768/led.h"
-#include "net-this/net-this-leds.h"
-#include "web-this/web-server-this.h"
-#include "web-this/web-nav-this.h"
 
 int main()
 {
@@ -24,13 +22,8 @@ int main()
          ClkInit();
          LogInit(ClkNowTmUtc, 115200);
          GpsInit();
-         NetInit("GPS", NetThisLinkLed, NetThisSpeedLed, true);
-		 
-		WebHookDecideWhatToDo = WebServerThisDecideWhatToDo;
-		WebHookHandleQuery    = WebServerThisHandleQuery;
-		WebHookPost           = WebServerThisPost;
-		WebHookReply          = WebServerThisReply;
-		WebHookAddNav         = WebNavThis;
+         NetInit("GPS");
+		 NtpServerEnable = true;
          WebInit("GPS Clock");
       
     while (1)
