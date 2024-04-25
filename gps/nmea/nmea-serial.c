@@ -1,7 +1,7 @@
 #include "nmea.h"
 #include "lpc1768/mstimer/mstimer.h"
+#include "lpc1768/uart1.h"
 #include "gps/gps.h"
-#include "uart1.h"
 
 int NmeaCmdAckItem   = -1;
 int NmeaCmdAckStatus =  0;

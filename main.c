@@ -1,7 +1,5 @@
-#include <stdint.h>
 
-#include "lpc1768/startup.h"
-#include "lpc1768-this/periphs.h"
+#include "lpc1768/crt.h"
 #include "lpc1768/lpc1768.h"
 #include "clock/clk/clk.h"
 #include "log/log.h"
@@ -14,9 +12,7 @@
 
 int main()
 {
-	     Startup();
-     PeriphsInit();
-	     LedInit();
+	     CrtInit();
      Lpc1768Init();
     SettingsInit();
          ClkInit();

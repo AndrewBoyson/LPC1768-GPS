@@ -1,9 +1,9 @@
 #include <stdbool.h>
 
+#include "lpc1768/uart1.h"
 #include "log/log.h"
 #include "gps/gps.h"
 #include "gps/nmea/nmea.h"
-#include "gps/nmea/uart1.h"
 
 bool NmeaCmdTrace = false;
 

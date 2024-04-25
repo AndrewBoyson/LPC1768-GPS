@@ -5,8 +5,8 @@
 #include <time.h>
 #include <string.h>
 
+#include "lpc1768/uart1.h"
 #include "nmea.h"
-#include "uart1.h"
 #include "gps/gps.h"
 #include "gps/pps.h"
 #include "log/log.h"
