@@ -31,8 +31,11 @@ int      PpsMsSinceLastPulse = 0;     //Calculated after a pulse from pulseHr
 uint32_t PpsLastPulseMs      = 0;     //Copied     after a pulse from pulseMs
 bool     PpsLastPulseIsSet   = false; //Copied     after a pulse from pulseValid
 
-void PpsHandler() //Called by a PPS interrupt
+static void (*prevGpioHook)(void) = 0;
+
+static void ppsHandler()
 {
+	if (prevGpioHook) prevGpioHook();
     PPS_INT_CLR;
     ClkGovSyncPpsI();
     pulseHr    = HrTimerCount();
@@ -135,11 +138,13 @@ void PpsMain()
 
 void PpsInit()
 {
+	prevGpioHook = GpioHook; //Hook into the GPIO interrupt handler
+	GpioHook = ppsHandler;
+	
     ENABLE_CLR;       //Set the enable pin to low
     ENABLE_DIR = 1;   //Set the enable pin direction to 1 == output
     GpsLog("PPS reset\r\n");
     confidenceReset();
     ENABLE_SET;       //Set the enable pin to high
     PPS_INT_ENR;      //Set the PPS pin to be interrupt on rise
-    ISER0 |= 1 << 21; //6.5.1 bit1 == Interrupt set enable for EINT3. It MUST be enabled even for GPIO interrupts - I checked.
 }

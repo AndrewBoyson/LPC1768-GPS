@@ -15,8 +15,8 @@ int main()
 	     CrtInit();
      Lpc1768Init();
     SettingsInit();
-         ClkInit();
          LogInit(ClkNowTmUtc, 115200);
+         ClkInit();
          GpsInit();
          NetInit("GPS");
 		 NtpServerEnable = true;
