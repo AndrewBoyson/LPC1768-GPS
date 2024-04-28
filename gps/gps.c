@@ -6,7 +6,7 @@
 #include "log/log.h"
 #include "gps/nmea/nmea.h"
 #include "pps.h"
-#include "clock/clk/clkgov.h"
+#include "clk/clkgov.h"
 
 bool GpsTrace   = true;
 bool GpsVerbose = false;

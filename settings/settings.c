@@ -4,8 +4,8 @@
 
 #include "gps/gps.h"
 #include "gps/nmea/nmea.h"
-#include "clock/clk/clkutc.h"
-#include "clock/clk/clkgov.h"
+#include "clk/clkutc.h"
+#include "clk/clkgov.h"
 #include "log/log.h"
 #include "net/net.h"
 #include "net/link/link.h"

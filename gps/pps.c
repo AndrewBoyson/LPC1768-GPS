@@ -2,7 +2,7 @@
 #include <time.h>
 
 #include "log/log.h"
-#include "clock/clk/clkgov.h"
+#include "clk/clkgov.h"
 #include "lpc1768/mstimer/mstimer.h"
 #include "lpc1768/hrtimer/hrtimer.h"
 #include "lpc1768/gpio.h"
@@ -135,7 +135,6 @@ void PpsMain()
 
     hadPulse = false;
 }
-
 void PpsInit()
 {
 	prevGpioHook = GpioHook; //Hook into the GPIO interrupt handler

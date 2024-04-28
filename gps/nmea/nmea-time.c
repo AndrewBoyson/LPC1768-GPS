@@ -6,9 +6,9 @@
 #include "gps/pps.h"
 #include "log/log.h"
 #include "lpc1768/mstimer/mstimer.h"
-#include "clock/clk/clk.h"
-#include "clock/clk/clkutc.h"
-#include "clock/clk/clktime.h"
+#include "clk/clk.h"
+#include "clk/clkutc.h"
+#include "clk/clktime.h"
 
 #define TIMEOUT_MS    10000
 #define CONFIDENCE_OK_CLOCK_SET    20 * 60
