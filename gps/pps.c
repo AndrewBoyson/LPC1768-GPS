@@ -5,22 +5,20 @@
 #include "clk/clkgov.h"
 #include "lpc1768/mstimer/mstimer.h"
 #include "lpc1768/hrtimer/hrtimer.h"
+#include "lpc1768/register.h"
 #include "lpc1768/gpio.h"
 #include "lpc1768/bitband.h"
 #include "gps.h"
-
-#define IO0INTENR_ADDR 0x40028090
-#define IO0INTCLR_ADDR 0x4002808C
-#define     ISER0_ADDR 0xE000E100
 
 #define     FIX_PIN FIO0PIN_ALIAS(23)
 #define  ENABLE_DIR FIO0DIR_ALIAS(24)
 #define  ENABLE_SET FIO0SET_ALIAS(24) = 1
 #define  ENABLE_CLR FIO0CLR_ALIAS(24) = 1
 #define     PPS_PIN FIO0PIN_ALIAS(17)
-#define PPS_INT_ENR BIT_BAND4(IO0INTENR_ADDR, 17) = 1
-#define PPS_INT_CLR BIT_BAND4(IO0INTCLR_ADDR, 17) = 1
-#define ISER0 *((volatile unsigned *) ISER0_ADDR)
+//#define PPS_INT_ENR BIT_BAND4(IO0INTENR_ADDR, 17) = 1
+//#define PPS_INT_CLR BIT_BAND4(IO0INTCLR_ADDR, 17) = 1
+#define PPS_INT_ENR IO0INTENR_ALIAS(17) = 1
+#define PPS_INT_CLR IO0INTCLR_ALIAS(17) = 1
 
 static volatile uint32_t pulseHr = 0;        //Set after a PPS interrupt. Good for accurate interval between two pulses
 static volatile uint32_t pulseMs = 0;        //Set after a PPS interrupt. Good for comparing between PPS and NMEA
