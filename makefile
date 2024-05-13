@@ -1,6 +1,6 @@
 
 PROJECT := gps
-UNUSED  := ../shared/1-wire/%
+#UNUSED  := ../shared/1-wire/%
 
 CFILES := $(wildcard ../shared/*.c ../shared/*/*.c ../shared/*/*/*.c ../shared/*/*/*/*.c ../shared/*/*/*/*/*.c ../shared/*/*/*/*/*/*.c)
 CFILES += $(wildcard *.c */*.c */*/*.c)
