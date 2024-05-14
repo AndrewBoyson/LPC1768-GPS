@@ -41,7 +41,6 @@ extern void ChgTraceUdp       (void);
 extern void ChgTraceTcp       (void);
 extern void ChgTraceHttp      (void);
 extern void ChgTraceTftp      (void);
-extern void ChgTraceOneWire   (void); //Declared to stop the compiler complaining - in the future make this a function pointer
 
 extern void ChgDnsSendRequestsViaIp4(void);
 extern void ChgNtpSendRequestsViaIp4(void);

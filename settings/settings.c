@@ -120,7 +120,6 @@ void ChgTraceUdp       () {       UdpTrace        =       !UdpTrace       ; setB
 void ChgTraceTcp       () {       TcpTrace        =       !TcpTrace       ; setBit(iTcp,              TcpTrace       ); }
 void ChgTraceHttp      () {       WebTrace        =       !WebTrace       ; setBit(iHttp,             WebTrace       ); }
 void ChgTraceTftp      () {      TftpTrace        =      !TftpTrace       ; setBit(iTftp,            TftpTrace       ); }
-void ChgTraceOneWire   () {} //Declared to stop the compiler complaining - in the future make this a function pointer 
 
 void ChgDnsSendRequestsViaIp4()  {             DnsSendRequestsViaIp4 =             !DnsSendRequestsViaIp4; }
 void ChgNtpSendRequestsViaIp4()  {  NtpClientQuerySendRequestsViaIp4 =  !NtpClientQuerySendRequestsViaIp4; }
