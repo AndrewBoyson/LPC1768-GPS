@@ -7,8 +7,6 @@ const char* WebHomeScriptDate = __DATE__;
 const char* WebHomeScriptTime = __TIME__;
 
 static const char* script =
-#include "web/base/clock/web-clock-class.inc"
-#include "web/common/web-ajax-class.inc"
 #include "web-home-script.inc"
 ;
 void WebHomeScript()

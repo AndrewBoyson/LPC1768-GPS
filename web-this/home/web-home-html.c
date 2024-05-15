@@ -6,7 +6,7 @@
 void WebHomeHtml()
 {
     HttpOk("text/html; charset=UTF-8", "no-cache", NULL, NULL);
-    WebAddHeader("Home", "settings.css", "home.js");
+    WebAddHeader3("Home", "settings.css", "ajax-class.js", "clock-class.js", "home.js");
     WebAddNav(HOME_PAGE);
     WebAddH1("Home");
     

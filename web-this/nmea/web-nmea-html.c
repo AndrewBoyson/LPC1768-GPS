@@ -7,7 +7,7 @@
 void WebNmeaHtml()
 {
     HttpOk("text/html; charset=UTF-8", "no-cache", NULL, NULL);
-    WebAddHeader("NMEA", "settings.css", "nmea.js");
+    WebAddHeader2("NMEA", "settings.css", "ajax-class.js", "nmea.js");
     WebAddNav(NMEA_PAGE);
     WebAddH1("NMEA");
     

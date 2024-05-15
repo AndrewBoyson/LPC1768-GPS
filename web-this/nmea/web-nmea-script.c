@@ -7,7 +7,6 @@ const char* WebNmeaScriptDate = __DATE__;
 const char* WebNmeaScriptTime = __TIME__;
 
 static const char* script =
-#include "web/common/web-ajax-class.inc"
 #include "web-nmea-script.inc"
 ;
 void WebNmeaScript()
